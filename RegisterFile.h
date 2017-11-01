@@ -28,7 +28,7 @@ class RegisterFile {
     //Write Register -- received from Mux  of rd or rt
     void writeRegister(RegisterTable::Register rd, string binaryValue);
     //Write Data
-    void writeData(RegisterTable::Register 
+    void writeData(RegisterTable::Register);
 
 };
 
