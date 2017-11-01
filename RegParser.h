@@ -44,7 +44,7 @@ class RegParser{
 
   // Given a correct formatted string, convert it into a string of all capital, no "0x" 
   // or "0X" string representation of a hex number
-  string hex2String(string s);
+  string formatHex(string s);
 
   // Convert a correct formatted string into binary strings representation of the same value
   string hex2Bin(string s);

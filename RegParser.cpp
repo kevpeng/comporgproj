@@ -66,7 +66,7 @@ void RegParser::parseLine(string s){
     str1.erase(remove_if(str1.begin(), str1.end(), ::isspace), str1.end());
 
     int i = cvtNumString2Number(str0);
-    string value = hex2String(str1);
+    string value = formatHex(str1);
     string result = hex2Bin(value);
 
     //cout << i << endl;
@@ -100,7 +100,7 @@ int RegParser::cvtNumString2Number(string s)
   return val;
 }
 
-string RegParser::hex2String(string s) {
+string RegParser::formatHex(string s) {
   if ((s[0] == '0' && s[1] == 'x') || (s[0] == '0' && s[1] == 'X')) {
     // take care of "0x" or "0X"
     s.erase(0, 2);
