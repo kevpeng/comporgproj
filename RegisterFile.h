@@ -14,21 +14,18 @@
 
 class RegisterFile {
   protected:
-  //RegisterTable::RegisterTable registerTable;
+    //RegisterTable::RegisterTable registerTable;
     typedef unordered_map<int, string> registers;
     int data1;
     int data2;
     int writeRegister;
 
-
   public:
     ///Constructors
     // Default Constructor
-    inline RegisterFile() {
-      for(int i = 0; i < 32; i++) {
-        registers.push_back(i, NULL);
-      }
-    }
+    RegisterFile();
+    // File Constructor
+    RegisterFile(string filename); //register1.memory
 
     // Destructor
     ~RegisterFile();
@@ -44,12 +41,15 @@ class RegisterFile {
     inline string readData2() {return registers.at(data2);}
 
     // Write Register -- received from Mux  of rd or rt
-  //void writeRegister(RegisterTable::Register rd, string binaryValue);
-  //inline void writeRegister(int rd, string value) {registers.at(rd) = value;}
+    //void writeRegister(RegisterTable::Register rd, string hexValue);
+    //inline void writeRegister(int rd, string value) {registers.at(rd) = value;}
     inline void writeRegister(int rd) {writeRegister = rd;}
     // Write Data
-  //void writeData(string binaryValue, string address);
+    //void writeData(string hexValue, string address);
     inline void writeData(string value) {registers.at(writeRegister) = value;}
+
+    // Function that outputs contents of Registers TODO
+    void printRegisterFile();
 
 };
 
