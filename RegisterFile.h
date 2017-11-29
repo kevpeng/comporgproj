@@ -9,7 +9,7 @@
 #ifndef __REGISTERFILE_H__
 #define __REGISTERFILE_H__
 
-#include"RegisterTable.h"
+//#include"RegisterTable.h"
 #include<unordered_map>
 
 class RegisterFile {
@@ -24,7 +24,14 @@ class RegisterFile {
   public:
     ///Constructors
     // Default Constructor
-    RegisterFile();
+    inline RegisterFile() {
+      for(int i = 0; i < 32; i++) {
+        registers.push_back(i, NULL);
+      }
+    }
+
+    // Destructor
+    ~RegisterFile();
 
     ///Functions
     // Read Register 1 -- rs
@@ -32,7 +39,7 @@ class RegisterFile {
     // Read Register 2 -- rt
     inline string readRegister2(int r2) {data2 = r2;}
     // Read Data 1 -- goes to ALU
-    inline string readData1() {return registers.at(data1);} //TODO const?
+    inline string readData1() {return registers.at(data1);}
     // Read Data 2 -- goes to Mux or  Write data of Data memory
     inline string readData2() {return registers.at(data2);}
 
