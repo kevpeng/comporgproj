@@ -28,14 +28,19 @@ class Control {
     ///Constructors
     // Default Constructor
     Control();
+    // Constructor TODO do we need this?
+    Control(string opcode, string func, string zero);
 
     // Destructor
     ~Control();
 
     ///Functions
-    // Parse Instruction?
-    //
-    //
+    // Reads in instruction, initializes input variables
+    void readInstruction(string inst);
+    // Parses instruction, initializes output variables
+    void parseInstruction();
+    // Clears instruction, wipes private variables
+    void clearInstruction();
 
     
 }
