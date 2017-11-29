@@ -9,16 +9,17 @@
 #ifndef __REGISTERFILE_H__
 #define __REGISTERFILE_H__
 
-//#include"RegisterTable.h"
 #include<unordered_map>
 
 class RegisterFile {
   protected:
-    //RegisterTable::RegisterTable registerTable;
     typedef unordered_map<int, string> registers;
-    int data1;
-    int data2;
-    int writeRegister;
+
+    int data1; // register number of rs
+    int data2; // register number of rt
+    int writeRegister; // register number of register to be written
+
+    bool RegWrite; //Input from Control that determines if a register is written
 
   public:
     ///Constructors
@@ -40,7 +41,8 @@ class RegisterFile {
     // Read Data 2 -- goes to Mux or  Write data of Data memory
     inline string readData2() {return registers.at(data2);}
 
-    // Write Register -- received from Mux  of rd or rt
+    // Write Register -- received from Mux  of rd or rt. Depends on Control
+    // signal TODO
     //void writeRegister(RegisterTable::Register rd, string hexValue);
     //inline void writeRegister(int rd, string value) {registers.at(rd) = value;}
     inline void writeRegister(int rd) {writeRegister = rd;}

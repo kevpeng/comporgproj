@@ -16,13 +16,13 @@ class Control {
     string zero; //zero output from ALU
 
     // Output
-    string RegDst; //Bool? int? Determines if a Register rd is used?
-    string RegWrite; // Determines if Register is written 
-    string ALUSrc; // Determines value going into ALU
-    string ALUOp; // Determines operation of ALU
-    string MemWrite; // Determines if Memory is written to
-    string MemRead; // Determines if memory is read
-    string MemToReg; // Determines if Memory data is written to a register
+    string RegDst; //Bool? int? Determines if a Register rd is used. Goes to Mux
+    string RegWrite; // Determines if Register is written. Goes to Reg File
+    string ALUSrc; // Determines value going into ALU. Goes to ALU Mux
+    string ALUOp; // Determines operation of ALU. Goes to ALU
+    string MemWrite; // Determines if Memory is written to. Goes to DataMemory
+    string MemRead; // Determines if memory is read. Goes to Data Memory?
+    string MemToReg; // Determines if Memory data is written to a register. Mux
 
   public:
     ///Constructors
