@@ -25,4 +25,29 @@ parseInstruction() {
 void
 Control::
 clearInstruction() {
+  opcode   = NULL;
+  func     = NULL;
+  zero     = NULL;
+          
+  RegDst   = NULL;
+  RegWrite = NULL;
+  ALUSrc   = NULL;
+  ALUOp    = NULL;
+  MemWrite = NULL;
+  MemRead  = NULL;
+  MemToReg = NULL;
+}
+
+void 
+Control::
+sendSignals() {
+  ///Calls functions in
+  // RegisterMux
+  // RegisterFile
+  // ALUMux
+  // ALU
+  // DataMemory
+  // DataMemory
+  // Mux for data memory written to register
+  ///To emit control signals
 }

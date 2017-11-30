@@ -28,8 +28,6 @@ class Control {
     ///Constructors
     // Default Constructor
     Control();
-    // Constructor TODO do we need this?
-    Control(string opcode, string func, string zero);
 
     // Destructor
     ~Control();
@@ -41,7 +39,8 @@ class Control {
     void parseInstruction();
     // Clears instruction, wipes private variables
     void clearInstruction();
-
+    // Sends out control signals to other parts of the processor
+    void sendSignals();
     
 }
 #endif
