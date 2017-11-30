@@ -1,5 +1,15 @@
 #include "InstructionParser.h"
 
+/* 
+ * Parses mips instruction file into binary encoding. Supports add, addi, sub, 
+ * slt,lw, sw,beq,and j instructions.Assumes format is correct. Stores all 
+ * instructions in map data structure and assign correct address (starts with 
+ * 0x00400000 and increment by 4)
+ * 
+ * Author: Tiancahng Yang
+ * Date: 11/30/17
+ */
+   
 
 InstructionParser::InstructionParser(string file){
 	myAddress = "00400000";

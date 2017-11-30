@@ -3,10 +3,10 @@
 using namespace std;
 
 /*
- * Tester file for ALU
+ * Tester file for instruction parser class
  *
  * Author: Tianchang Yang
- * Date: 11/3/17
+ * Date: 11/30/17
  */
 
 int main(int argc, char *argv[])
