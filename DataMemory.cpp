@@ -6,7 +6,7 @@
  * and will determine if it's necessary to store things in memory or not. 
  *
  */
-
+#include "MemParser.h"
 #include "DataMemory.h"
 
 // constructor for DataMemory
@@ -24,7 +24,9 @@ DataMemory::DataMemory(string filename)
 
 // reads in file of strings. processes it and puts it into the map
 void DataMemory::setFromFile(string filename)
-{ 
+{   
+  if(MemParser::isComment(line)) continue;
+  
   fstream input;
   input.open(filename.c_str());
   if(input.bad()) { cout << "error reading file" << endl; }
