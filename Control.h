@@ -46,7 +46,7 @@ class Control {
     int getALUSrc() { return myALUSrc; }
     bool getRegWrite() { return myRegWrite; }
     
-}
+};
 #endif
 
 
