@@ -11,7 +11,7 @@ using namespace std;
 /* 
  * Parses register configuration file. Assumes format is correct.
  * 
- * Author: Tiancahng Yang
+ * Author: Tianchang Yang
  * Date: 11/1/17
  */
    
@@ -22,7 +22,7 @@ class RegParser{
   RegParser(string filename);
 
   // Accessor for the register file parsed from register input file
-  map<int, string> getRegisters() { return myReg; }
+  &map<int, string> getRegisters() { return &myReg; }
 
  private:
   // Instance variable storing registers values (binary values)

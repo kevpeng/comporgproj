@@ -16,32 +16,34 @@ RegisterFile() {
 // File Constructor
 RegisterFile::
 RegisterFile(string filename) { //register1.memory
-  fstream file;
-  file.open(filename);
-  if(file.bad()) { cout << "Error reading file" << endl;}
-  else {
-    string line;
-    while(getLine(file, line)) {
-      string regNum[2];
-      string hexVal[10];
-      //hexVal += "0x"; //Adds Hex beginning
-      bool data = false;
-
-      for(int i = 0; i < line.length(); i++) {
-        if(line[i] == ':') {
-          data = true;
-          continue;
-        }
-        if(!data)
-          regNum += line[i]; //Adds Register number
-        if(data) 
-          hexVal += line[i]; //Appends hex digits
-      }
-      if(hexVal[1] != 'x')
-        hexVal.insert(0, "0x");
-      registers.push_back((int)regNum, hexVal);
-    }
-  }
+  RegParser parser(filename); // Uses Register Parser from RegParser file
+  registers = parser.getRegisters();
+//  fstream file;
+//  file.open(filename);
+//  if(file.bad()) { cout << "Error reading file" << endl;}
+//  else {
+//    string line;
+//    while(getLine(file, line)) {
+//      string regNum[2];
+//      string hexVal[10];
+//      //hexVal += "0x"; //Adds Hex beginning
+//      bool data = false;
+//
+//      for(int i = 0; i < line.length(); i++) {
+//        if(line[i] == ':') {
+//          data = true;
+//          continue;
+//        }
+//        if(!data)
+//          regNum += line[i]; //Adds Register number
+//        if(data) 
+//          hexVal += line[i]; //Appends hex digits
+//      }
+//      if(hexVal[1] != 'x')
+//        hexVal.insert(0, "0x");
+//      registers.push_back((int)regNum, hexVal);
+//    }
+//  }
 }
 
 // Destructor

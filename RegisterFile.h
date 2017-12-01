@@ -12,13 +12,15 @@
 #include <unordered_map>
 #include <string>
 
+#include "RegParser.h"
+
 using namespace std;
 
 class RegisterFile {
   protected:
     ///Private Variables
     // Registers
-    unordered_map<int,string> registers;
+    map<int,string> registers;
 
     // Use variables
     int data1; // register number of rs
