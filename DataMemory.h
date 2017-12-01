@@ -32,6 +32,9 @@ class DataMemory
 	
 		// updates the address
 		void setCurrAddress(string address);
+	
+		// updates the data
+		void setCurrData(string data);
        
 		//set the needToWrite variable
 		void setNeedToWrite(bool value);
