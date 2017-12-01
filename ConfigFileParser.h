@@ -8,7 +8,9 @@ class ConfigFileParser
 	public: 
 		
 		// constructor for configurateion file parser
-		ConfigFileParser();
+		inline ConfigFileParser() { programInput = ""; memoryContentsInput = ""; 
+			registerFileInput = ""; outputFile = ""; batch = false; 
+			bool = false; writeToFile = false; printMemoryInput = false; } 
 		void configure(string file);	
 		inline string getInputFile() { return programInput; }
 		inline string getMemoryFile() { return memoryContentsInput; }
