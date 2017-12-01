@@ -54,12 +54,12 @@ RegisterFile::
 
 ///Functions
 // Read Register 1 -- rs
-string 
+void 
 RegisterFile::
 readRegister1(int r1) {data1 = r1;}
 
 // Read Register 2 -- rt
-string 
+void 
 RegisterFile::
 readRegister2(int r2) {data2 = r2;}
 

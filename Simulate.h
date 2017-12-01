@@ -11,7 +11,6 @@
 #include <iostream>
 #include "ConfigFileParser.h"
 #include "InstructionMemory.h"
-//#include "Control.h"
 #include "DataMemory.h"
 #include "InstructionParser.h"
 #include "MemParser.h"

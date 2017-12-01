@@ -1,12 +1,14 @@
 #ifndef __MEMPARSER_H__
 #define __MEMPARSER_H__
 
-using namespace std;
 
 #include <iostream>
 #include <map>
 #include <fstream>
 #include <algorithm>
+
+
+using namespace std;
 
 /* 
  * Parses memory data configuration file. Assumes format is correct.

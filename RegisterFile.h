@@ -41,9 +41,9 @@ class RegisterFile {
 
     ///Functions
     // Read Register 1 -- rs
-    string readRegister1(int r1) {data1 = r1;}
+    void readRegister1(int r1) {data1 = r1;}
     // Read Register 2 -- rt
-    string readRegister2(int r2) {data2 = r2;}
+    void readRegister2(int r2) {data2 = r2;}
     // Read Data 1 -- goes to ALU
     string readData1() {return registers.at(data1);}
     // Read Data 2 -- goes to Mux or  Write data of Data memory
