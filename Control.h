@@ -12,8 +12,6 @@ class Control {
     ///Private Variables
     // Input
     string opcode; //six bit instruction opcode from Instruction Memory
-    string func; //six bit instruction func field from Instruction Memory
-    string zero; //zero output from ALU
 
     // Output
     string RegDst; //Bool? int? Determines if a Register rd is used. Goes to Mux
@@ -39,8 +37,15 @@ class Control {
     void parseInstruction();
     // Clears instruction, wipes private variables
     void clearInstruction();
-    // Sends out control signals to other parts of the processor
-    void sendSignals();
+
+    ///Getters
+    inline string getRegDst() {return RegDst;}
+    inline string getRegWrit() {return RegWrit;}
+    inline string getALUSrc() {return ALUSrc;} 
+    inline string getALUOp() {return ALUOp;}
+    inline string getMemWp() {return MemWp;}
+    inline string getMemRead() {return MemRead;}
+    inline string getMemToReg() {return MemToReg;}
     
 }
 #endif
