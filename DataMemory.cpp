@@ -6,8 +6,8 @@
  * and will determine if it's necessary to store things in memory or not. 
  *
  */
-#include "MemParser.h"
 #include "DataMemory.h"
+#include "MemParser.h"
 
 // constructor for DataMemory
 DataMemory::DataMemory()
@@ -24,44 +24,56 @@ DataMemory::DataMemory(string filename)
 
 // reads in file of strings. processes it and puts it into the map
 void DataMemory::setFromFile(string filename)
-{   
-  if(MemParser::isComment(line)){ continue; }
-  
-  fstream input;
-  input.open(filename.c_str());
-  if(input.bad()) { cout << "error reading file" << endl; }
-  else {
-    string line;
-    while(getline(input, line))
-    {
-      // replace the colons with spaces in text file.
-      string stringsArray[2];
-      bool data = false;
-      for(int i = 0; i < line.length(); i++) {
-        if(line[i] == ':') {
-          data = true;
-          continue;
-        }  
-        if(!data) { // address put into stringsArray[0]
-          stringsArray[0] += line[i];
-        }
-        if(data) { // data put into stingsArray[1]
-          stringsArray[1] += line[i];	
-        }
-      }    
-      // make into uniform hexidecimal
-      for(int i = 0; i < 2; i++){
-        if(stringsArray[i].substr(0,2) != "0x"){
-          stringsArray[i] = "0x" + stringsArray[i];
-        }
-      }
-      // put the processed data into the map.
-      dataMemoryMap[stringsArray[0]] = stringsArray[1];		
-    }
-  }
+{ 
+	
+	MemParser parser = MemParser(filename);
+  	dataMemoryMap = parser.getMemory();
+/*  
+  	fstream input;
+  	input.open(filename.c_str());
+  	if(input.bad()) { cout << "error reading file" << endl; }
+  	else {
+    	string line;
+    	while(getline(input, line))
+    	{
+		
+    	  	// replace the colons with spaces in text file.
+    	  	string stringsArray[2];
+    	  	bool data = false;
+			bool comment = false;
+		    for(int i = 0; i < line.length(); i++) {
+    	    	if(line[i] == '#') { // if its a comment, go to next line.
+					comment = true;
+					break;
+				}
+	
+				if(line[i] == ':') {
+	        		data = true;
+	        		continue;
+	        	}  
+	        	if(!data) { // address put into stringsArray[0]
+	        		stringsArray[0] += line[i];
+	        	}
+	        	if(data) { // data put into stingsArray[1]
+	        	  	stringsArray[1] += line[i];	
+	        	}
+	      	}
+		  	if(!comment){  
+	      	// make into uniform hexidecimal
+	      		for(int i = 0; i < 2; i++){
+	        		if(stringsArray[i].substr(0,2) != "0x"){
+	        			stringsArray[i] = "0x" + stringsArray[i];
+	        		}
+		  		}
+	      		// put the processed data into the map.
+	      		dataMemoryMap[stringsArray[0]] = stringsArray[1];		
+	    	}
+		}    
+	}
+*/
 }
 
-// sets the needToWRite instance variable
+// sets the needToWrite instance variable
 void DataMemory::setNeedToWrite(bool writeToMem) 
 {
   needToWrite = writeToMem;
@@ -86,7 +98,7 @@ void DataMemory::setNeedToRead(bool readFromMem)
 void DataMemory::setCurrAddress(string address)
 {
   currentAddress = address;
-  // currentData = dataMemoryMap[currentAddress];
+  currentData = dataMemoryMap[currentAddress];
 }
 
 // given the data, sets current data to it.

@@ -16,10 +16,8 @@ int main()
 	DataMemory obj1 = DataMemory("data1.memory");
 	//obj1.setFromFile("data1.memory");
 	cout << "works" << endl;
-	obj1.setCurrAddress("0x10000000");
 	obj1.print();
-	obj1.writeData("0x10000004");	
+	obj1.setCurrAddress("1000000C");	
 	obj1.print();
-	
 	return(0);
 }
