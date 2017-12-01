@@ -59,10 +59,13 @@ private:
 	ALUControl ALU_Control;
 	Control main_Control;
 	RegisterFile register_File;
+	PC program_Counter;
+
 
 	
-
-	void parse();
+	string hex2Bin(string input);
+	string bin2Hex(string input);
+	char getHexCharacter(string str);
 
 };
 

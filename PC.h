@@ -9,7 +9,7 @@ class PC
 {
 	public:
 		// default constructor
-		inline PC() { currentAddress = "0x00400000"; }	
+		inline PC() { currentAddress = "00400000"; }	
 		
 		// sets the current address
 		inline void setCurrAddress(string address) { currentAddress = address;}
