@@ -16,8 +16,8 @@ RegisterFile() {
 // File Constructor
 RegisterFile::
 RegisterFile(string filename) { //register1.memory
-  RegParser parser(filename); // Uses Register Parser from RegParser file
-  registers = parser.getRegisters();
+  RegParser::RegParser parser(filename); // Uses Register Parser from RegParser file
+  registers = RegParser::parser.getRegisters();
 //  fstream file;
 //  file.open(filename);
 //  if(file.bad()) { cout << "Error reading file" << endl;}

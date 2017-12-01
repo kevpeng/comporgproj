@@ -22,7 +22,7 @@ class RegParser{
   RegParser(string filename);
 
   // Accessor for the register file parsed from register input file
-  &map<int, string> getRegisters() { return &myReg; }
+  inline map<int, string> getRegisters() { return myReg; }
 
  private:
   // Instance variable storing registers values (binary values)
