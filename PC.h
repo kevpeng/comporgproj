@@ -15,16 +15,16 @@ class PC
 		inline void setCurrAddress(string address) { currentAddress = address;}
 		
 		// updates the address	
-		void updateAddress();
+	//	void updateAddress();
 
 		// get the currentAddress
 		inline string getAddress() { return currentAddress; }
 	
 		// converts hexidecimal to binary
-		string hex2Bin(string s);
+	//	string hex2Bin(string s);
 
 		// converts binary to hexidecimal
-		string bin2Hex(string s);	
+	//	string bin2Hex(string s);	
 
 	private: 
 		// currentAddress is in hexidecimal
