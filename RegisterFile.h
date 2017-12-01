@@ -17,7 +17,7 @@
 using namespace std;
 
 class RegisterFile {
-  protected:
+  private:
     ///Private Variables
     // Registers
     map<int,string> registers;
@@ -27,7 +27,7 @@ class RegisterFile {
     int data2; // register number of rt
     int writeRegister; // register number of register to be written
 
-    bool RegWrite; //Input from Control that determines if a register is written
+    bool regWrite; //Input from Control that determines if a register is written
 
   public:
     ///Constructors
@@ -41,9 +41,9 @@ class RegisterFile {
 
     ///Functions
     // Read Register 1 -- rs
-    void readRegister1(int r1) {data1 = r1;}
+    void readRegister1(string r1);
     // Read Register 2 -- rt
-    void readRegister2(int r2) {data2 = r2;}
+    void readRegister2(string r2);
     // Read Data 1 -- goes to ALU
     string readData1() {return registers.at(data1);}
     // Read Data 2 -- goes to Mux or  Write data of Data memory
@@ -53,7 +53,7 @@ class RegisterFile {
     // signal TODO
     void writeToRegister(int rd) {writeRegister = rd;}
     // Write Data -- writes to the register specified by writeToRegister
-    void writeData(string value) {registers.at(writeRegister) = value;}
+    void writeData(string value);
 
     // Function that outputs contents of Registers
     void printRegisterFile();

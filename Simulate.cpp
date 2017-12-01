@@ -1,4 +1,5 @@
-//g++ -Wall main.cpp Simulate.cpp InstructionMemory.cpp InstructionParser.cpp ConfigFileParser.cpp DataMemory.cpp ShiftLeft.cpp signExtend.cpp ALU.cpp MUX.cpp ALUControl.cpp Control.cpp RegParser.cpp MemParser.cpp -o main
+//g++ -Wall main.cpp Simulate.cpp InstructionMemory.cpp InstructionParser.cpp ConfigFileParser.cpp DataMemory.cpp ShiftLeft.cpp signExtend.cpp ALU.cpp MUX.cpp ALUControl.cpp Control.cpp RegParser.cpp MemParser.cpp RegisterFile.cpp -o main
+
 
 
 
@@ -54,6 +55,10 @@ Simulate::Simulate(string filename) {
 	MUX_5 = MUX();
 	ALU_Control = ALUControl();
 	main_Control = Control();
+	register_File = RegisterFile(registerFile);
+	//register_File.printRegisterFile();
+	//register_File.readRegister1("11111");
+	//cout << register_File.readData1() << endl;
 }
 
 //performs appropriate function

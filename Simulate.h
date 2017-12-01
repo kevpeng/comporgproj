@@ -58,7 +58,7 @@ private:
 	MUX MUX_5;
 	ALUControl ALU_Control;
 	Control main_Control;
-	//RegisterFile register_File;
+	RegisterFile register_File;
 
 	
 

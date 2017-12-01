@@ -8,16 +8,20 @@
 // Default Constructor
 RegisterFile::
 RegisterFile() {
-  for(int i = 0; i < 32; i++) {
-    registers.push_back(i, NULL);
-  }
+  data1 = -1;
+  data2 = -1;
+  writeRegister = -1;
+  
 }
 
 // File Constructor
 RegisterFile::
 RegisterFile(string filename) { //register1.memory
-  RegParser::RegParser parser(filename); // Uses Register Parser from RegParser file
-  registers = RegParser::parser.getRegisters();
+  RegParser parser = RegParser(filename); // Uses Register Parser from RegParser file
+  registers = parser.getRegisters();
+  data1 = -1;
+  data2 = -1;
+  writeRegister = -1;
 //  fstream file;
 //  file.open(filename);
 //  if(file.bad()) { cout << "Error reading file" << endl;}
@@ -49,49 +53,34 @@ RegisterFile(string filename) { //register1.memory
 // Destructor
 RegisterFile::
 ~RegisterFile() {
-  delete RegisterFile;
+  //delete RegisterFile;
 }
 
-///Functions
-// Read Register 1 -- rs
-void 
-RegisterFile::
-readRegister1(int r1) {data1 = r1;}
+ // Read Register 1 -- rs
+void RegisterFile::readRegister1(string r1) {
+  data1 = stoi (r1,nullptr,2);
+}
 
 // Read Register 2 -- rt
-void 
-RegisterFile::
-readRegister2(int r2) {data2 = r2;}
+void RegisterFile::readRegister2(string r2) {
+  data2 = stoi (r2, nullptr, 2);
+}
 
-// Read Data 1 -- goes to ALU
-string 
-RegisterFile::
-readData1() {return registers.at(data1);}
+void RegisterFile::writeData(string value) {
+  if (regWrite) {
+    registers.at(writeRegister) = value;
+  }
+}
 
-// Read Data 2 -- goes to Mux or  Write data of Data memory
-string 
-RegisterFile::
-readData2() {return registers.at(data2);}
-
-// Write Register -- received from Mux  of rd or rt. Depends on Contro signal
-void 
-RegisterFile::
-writeToRegister(int rd) {writeRegister = rd;}
-
-// Write Data -- actually writes data to the register specified by
-// writeToRegister
-void 
-RegisterFile::
-writeData(string value) {registers.at(writeRegister) = value;}
 
 // Function that outputs contents of Registers
 void
 RegisterFile::
 printRegisterFile() {
   cout << "Printing Registers" << endl;
-  map<int,string>::iterator it;
-  for(auto it : registers.begin()) {
-    cout << "Register[" << it->first << "] = " << it->second << endl;
+
+  for (int i = 0; i < 32; i++) {
+    cout << "Register["  << i << "] = " << "\t"<< registers[i] << endl;
   }
 }
 
