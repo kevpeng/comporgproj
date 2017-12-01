@@ -9,7 +9,7 @@
 #ifndef __REGISTERFILE_H__
 #define __REGISTERFILE_H__
 
-#include <unordered_map>
+#include <map>
 #include <string>
 
 #include "RegParser.h"

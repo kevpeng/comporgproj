@@ -89,7 +89,7 @@ void
 RegisterFile::
 printRegisterFile() {
   cout << "Printing Registers" << endl;
-  unordered_map<int,string>::iterator it;
+  map<int,string>::iterator it;
   for(auto it : registers.begin()) {
     cout << "Register[" << it->first << "] = " << it->second << endl;
   }
