@@ -32,9 +32,9 @@ void InstructionMemory::print()
 {
   cout << "Instruction Memory Contents:" << endl;
   map<string,string>::iterator it;
-  for(it = dataMemoryMap.begin(); it != dataMemoryMap.end(); it++){
+  for(it = myInstruction.begin(); it != myInstruction.end(); it++){
 	string t = it->second;
-    cout << "address:[0x" << it->first << "] = 0x" << bin2Hex(t) << endl;
+    cout << "address:[0x" << it->first << "] = 0x" << InstructionMemory::bin2Hex(t) << endl;
   }
   cout << endl;
 }
