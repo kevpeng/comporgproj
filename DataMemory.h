@@ -63,6 +63,11 @@ class DataMemory
 		string currentAddress; // current address
 		string currentData; 	// current data
 		map <string,string> dataMemoryMap;
+	
+		// helper files to help get hexidecimal from binary
+		char getHexCharacter(string str);	
+		string bin2Hex(string s);
+
 };
 
 #endif
