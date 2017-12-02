@@ -6,7 +6,7 @@
  */
 
 #include "PC.h" 
-#include "ALU.h"
+
 /*
 void PC::updateAddress()
 {
@@ -88,4 +88,3 @@ string PC::bin2Hex(string s)
 		}
 	}
 */
-}
