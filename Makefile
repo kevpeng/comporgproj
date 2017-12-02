@@ -1,5 +1,9 @@
-default:
-	g++ RegisterFileTester.cpp -std=c++11 
+default: 
+	g++ main.cpp -o processor
 
 o: 
-	vim -p RegisterFile.cpp Control.cpp RegisterFileTester.cpp
+	vim -p RegisterFile.cpp Control.cpp Simulate.cpp main.cpp
+
+clean:
+	rm processor
+	rm a.out
