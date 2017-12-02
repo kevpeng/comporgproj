@@ -24,13 +24,19 @@ public:
 
 	string getInstruction();
 
+	//print out contents
+	void print();
 
 private:
 	
 	string myAddress;
 
 	map<string, string> myInstruction;
-
+	
+	// helper methods to print in hexidecimal
+	char getHexCharacter(string str);
+	string bin2hex(string s);
+	
 };
 
 #endif
