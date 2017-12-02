@@ -1,23 +1,25 @@
-/*
-*  
-*
-*  Author: Tianchang Yang
+/* Author: Tianchang Yang
 *  Date: 11/30/17
 */
 
 #include "ALUControl.h"
 
-//Default constructor
+// Default constructor
 ALUControl::ALUControl() {
 	myOp = -1;
 }
 
 
-void ALUControl::setALUOp(int op){
+// Sets ALU Operation
+void 
+ALUControl::
+setALUOp(int op){
 	myOp = op;
 }
 
-void ALUControl::setInstruction(string instruction){
+void 
+ALUControl::
+setInstruction(string instruction){
 	if (instruction ==	"100000") {
 		myOp = 1;
 	} else if (instruction == "100010") {

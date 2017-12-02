@@ -1,33 +1,40 @@
 /*
-*  ALU control class
-*
-*  Author: Tianchang Yang
-*  Date: 11/30/17
-*/
+ *  ALU control class
+ *
+ *  Author: Tianchang Yang
+ *  Date: 11/30/17
+ */
 
-#ifndef _ALUCONTROL_H_
-#define _ALUCONTROL_H_
+#ifndef __ALUCONTROL_H__
+#define __ALUCONTROL_H__
 
 #include <string>
 
 using namespace std;
+
 class ALUControl {
 
-public:
+  public:
+    ///Constructors
+    //Default constructor
+    ALUControl();
 
-	//Default constructor
-	ALUControl();
-
-	void setALUOp(int op);
-
-	void setInstruction(string instruction);
-
-	int getOutput() { return myOp; }
+    ///Functions
+    // Sets ALU Operation
+    void setALUOp(int op);
+    // Sets Instruction
+    void setInstruction(string instruction);
 
 
-private:
-	int myOp;
-	
+    ///Getters
+    // Returns private variable for operation, myOp
+    inline int getOutput() { return myOp; }
+
+
+  private:
+    ///Private Variables
+    // Stores operation type
+    int myOp;
 
 };
 
