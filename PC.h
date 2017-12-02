@@ -1,3 +1,9 @@
+/*
+* Author: Kevin Peng
+* This is the PC.h file that stores the address in hexidecimal. 
+* It can be updated.
+*/
+
 #ifndef PC_h
 #define PC_h
 
