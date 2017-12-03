@@ -28,6 +28,10 @@ class RegisterFile {
     int writeRegister; // register number of register to be written
 
     bool regWrite; //Input from Control that determines if a register is written
+  
+      // helper methods to get hex string
+    char getHexCharacter(string str);
+    string bin2Hex(string s);
 
   public:
     ///Constructors
