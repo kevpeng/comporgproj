@@ -80,7 +80,39 @@ printRegisterFile() {
   cout << "Printing Registers" << endl;
 
   for (int i = 0; i < 32; i++) {
-    cout << "Register["  << i << "] = " << "\t"<< registers[i] << endl;
+    cout << "Register["  << i << "] = " << "\t 0x"<< bin2Hex(registers[i]) << endl;
   }
+}
+
+// helper methods to get hexidecimal from binary string
+char RegisterFile::getHexCharacter(string str)
+{
+    if(str.compare("1111") == 0) return 'F';
+    else if(str.compare("1110") == 0) return 'E';
+    else if(str.compare("1101")== 0) return 'D';
+    else if(str.compare("1100")== 0) return 'C';
+    else if(str.compare("1011")== 0) return 'B';
+    else if(str.compare("1010")== 0) return 'A';
+    else if(str.compare("1001")== 0) return '9';
+    else if(str.compare("1000")== 0) return '8';
+    else if(str.compare("0111")== 0) return '7';
+    else if(str.compare("0110")== 0) return '6';
+    else if(str.compare("0101")== 0) return '5';
+    else if(str.compare("0100")== 0) return '4';
+    else if(str.compare("0011")== 0) return '3';
+    else if(str.compare("0010")== 0) return '2';
+    else if(str.compare("0001")== 0) return '1';
+    else if(str.compare("0000")== 0) return '0';
+    return ' ';
+}
+
+string RegisterFile::bin2Hex(string s)
+{
+    string endresult = "";
+    for(int i = 0; i < s.length(); i = i+4)
+    {
+        endresult += getHexCharacter(s.substr(i,4));
+    }
+    return endresult;
 }
 
