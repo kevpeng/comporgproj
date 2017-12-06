@@ -1,0 +1,214 @@
+------------------begining simulation------------------
+Press Enter to ContinueNext instruction is: slt	$1, $2, $10
+binary machine code: 00000000010010100000100000101010
+
+PC: 
+current PC address: 0x00400000
+
+Instruction memory: current instruction memory address: 0x00400000
+current instruction fetched from instruction memory: 0x004A082A
+
+ALU 1: 
+address PC passed into ALU 1 is: 0x00400000
+the other operand ALU 1 takes in is: 0x00000004
+the result of ALU 1 is: 0x00400004
+
+Control: 
+The opcode passed to control is: 0x00
+RegDst: 1
+Jump: 0
+Branch: 0
+MemRead: 0
+MemToReg: 0
+ALUOp: -1
+MemWrite: 0
+ALUSrc: 0
+RegWrite: 1
+
+MUX 1: 
+The first operand passed in: 0x0A
+The second operand passed in: 0x01
+The control passed to MUX 1 from main control is: 1
+The output from MUX 1 is: 0x01
+
+Register File: 
+The first read register number is: 0x02
+The second read register number is: 0x0A
+The data read from first register is: 0x2EC4F219
+The data read from second register is: 0x81FB7B82
+
+Sign Extend: 
+The input is: 0x082A
+The output is: 0x0000082A
+
+MUX 2: 
+The first operand passed in: 0x81FB7B82
+The second operand passed in: 0x0000082A
+The control passed to MUX 2 from main control is: 0
+The output from MUX 2 is: 0x81FB7B82
+
+ALU Control: 
+The instruction received is: 0x2A
+The ALUOp received from main control is: -1
+The control sending to ALU 3 is: 2
+
+ALU 3:
+Operand 1 is: 0x2EC4F219
+Operand 2 is: 0x81FB7B82
+Operation for ALU 3 to perform is: 2
+the result of ALU 3 is: 0xACC97697
+The two operand is equal or not: 0
+
+Data Memory: 
+Address is set to: 0xACC97697
+Data to write is: 0x81FB7B82
+MemWrite signal received from main control is: 0
+MemRead signal received from main control is: 0
+The data read from data memory is: 0x
+
+MUX 3: 
+The first operand passed in: 0xACC97697
+The second operand passed in: 0x
+The control passed to MUX 3 from main control is: 0
+The output from MUX 3 is: 0xACC97697
+
+Writeback: 
+The RegWrite signal is: 1
+The data to write to register is: 0x00000001
+The register to write to is: 0x01
+
+Shift left 1: 
+The instruction passed in is: 0x04A082A
+Shift result is: 0x12820A8
+The jump address is: 0x012820A8
+
+Shift left 2: 
+The instruction passed in is: 0x0000082A
+Shift result is: 0x000020A8
+
+ALU 2:
+Operand 1 is: 0x00400004
+Operand 2 is: 0x000020A8
+the result of ALU 2 is: 0x004020AC
+
+MUX 5: 
+The first operand passed in: 0x00400004
+The second operand passed in: 0x004020AC
+The control passed to MUX 5 from main control is: 0
+The output from MUX 5 is: 0x00400004
+
+MUX 4: 
+The first operand passed in: 0x00400004
+The second operand passed in: 0x012820A8
+The control passed to MUX 4 from main control is: 0
+The output from MUX 4 is: 0x00400004
+
+
+
+Press Enter to ContinueNext instruction is: slt	$1, $2, $3
+binary machine code: 00000000010000110000100000101010
+
+PC: 
+current PC address: 0x00400004
+
+Instruction memory: current instruction memory address: 0x00400004
+current instruction fetched from instruction memory: 0x0043082A
+
+ALU 1: 
+address PC passed into ALU 1 is: 0x00400004
+the other operand ALU 1 takes in is: 0x00000004
+the result of ALU 1 is: 0x00400008
+
+Control: 
+The opcode passed to control is: 0x00
+RegDst: 1
+Jump: 0
+Branch: 0
+MemRead: 0
+MemToReg: 0
+ALUOp: -1
+MemWrite: 0
+ALUSrc: 0
+RegWrite: 1
+
+MUX 1: 
+The first operand passed in: 0x03
+The second operand passed in: 0x01
+The control passed to MUX 1 from main control is: 1
+The output from MUX 1 is: 0x01
+
+Register File: 
+The first read register number is: 0x02
+The second read register number is: 0x03
+The data read from first register is: 0x2EC4F219
+The data read from second register is: 0xC57B54BA
+
+Sign Extend: 
+The input is: 0x082A
+The output is: 0x0000082A
+
+MUX 2: 
+The first operand passed in: 0xC57B54BA
+The second operand passed in: 0x0000082A
+The control passed to MUX 2 from main control is: 0
+The output from MUX 2 is: 0xC57B54BA
+
+ALU Control: 
+The instruction received is: 0x2A
+The ALUOp received from main control is: -1
+The control sending to ALU 3 is: 2
+
+ALU 3:
+Operand 1 is: 0x2EC4F219
+Operand 2 is: 0xC57B54BA
+Operation for ALU 3 to perform is: 2
+the result of ALU 3 is: 0x69499D5F
+The two operand is equal or not: 0
+
+Data Memory: 
+Address is set to: 0x69499D5F
+Data to write is: 0xC57B54BA
+MemWrite signal received from main control is: 0
+MemRead signal received from main control is: 0
+The data read from data memory is: 0x
+
+MUX 3: 
+The first operand passed in: 0x69499D5F
+The second operand passed in: 0x
+The control passed to MUX 3 from main control is: 0
+The output from MUX 3 is: 0x69499D5F
+
+Writeback: 
+The RegWrite signal is: 1
+The data to write to register is: 0x00000000
+The register to write to is: 0x01
+
+Shift left 1: 
+The instruction passed in is: 0x043082A
+Shift result is: 0x10C20A8
+The jump address is: 0x010C20A8
+
+Shift left 2: 
+The instruction passed in is: 0x0000082A
+Shift result is: 0x000020A8
+
+ALU 2:
+Operand 1 is: 0x00400008
+Operand 2 is: 0x000020A8
+the result of ALU 2 is: 0x004020B0
+
+MUX 5: 
+The first operand passed in: 0x00400008
+The second operand passed in: 0x004020B0
+The control passed to MUX 5 from main control is: 0
+The output from MUX 5 is: 0x00400008
+
+MUX 4: 
+The first operand passed in: 0x00400008
+The second operand passed in: 0x010C20A8
+The control passed to MUX 4 from main control is: 0
+The output from MUX 4 is: 0x00400008
+
+
+
+------------------end------------------
