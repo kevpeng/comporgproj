@@ -1,7 +1,8 @@
-#include "PC.h" 
 #include <iostream>
 
-int main(){
+#include "PC.h" 
+
+int main() {
 	PC temp = PC();
 	cout << "current address expected = [0x00400000] actual = " << temp.getAddress() << endl;	
 //	temp.updateAddress();	
