@@ -1,25 +1,23 @@
 # Makefile Variables
-CC = g++
+CC = g++     
 LD = $(CC)
 CCFLAGS = -Wall -Wno-deprecated --std=c++11 -g -c   
 LDFLAGS = -Wall --std=c++11 -Wno-deprecated -g
 OBJS = main.o Simulate.o InstructionMemory.o InstructionParser.o ConfigFileParser.o DataMemory.o ShiftLeft.o SignExtend.o ALU.o MUX.o ALUControl.o Control.o RegParser.o MemParser.o RegisterFile.o PC.o
 SIMDEPS = Simulate.cpp ConfigFileParser.cpp InstructionMemory.cpp DataMemory.cpp InstructionParser.cpp MemParser.cpp ALU.cpp MUX.cpp PC.cpp RegisterFile.cpp RegParser.cpp ShiftLeft.cpp SignExtend.cpp ALUControl.cpp Control.cpp
+################################################################################
 
-main: $(OBJS)
+#compiles main from .o files
+main: $(OBJS) 
 	$(LD) $(LDFLAGS) $(OBJS) -o $@
 
 r: #runs main
 	./main input.config
 
-o: 
-	vim -p RegisterFile.cpp RegisterFile.h Control.cpp Control.h
-
-clean:
+clean: #removes executable
 	rm main
 
-reallyclean:
-	clean
+reallyclean: clean #cleans and removes all .o files
 	rm *.o
 
 old: #original make command. recompiles after each change
@@ -27,7 +25,7 @@ old: #original make command. recompiles after each change
 
 
 ################################################################################
-#Compiles .o files -- reduces recompilation
+# O Compilers -- reduces recompilation
 ################################################################################
 main.o: main.cpp Simulate.cpp
 	$(CC) $(CCFLAGS) $<
