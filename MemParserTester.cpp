@@ -1,16 +1,14 @@
-#include "MemParser.h"
-
-using namespace std;
-
 /*
  * Tester file for class MemParser
  *
  * Author: Tianchang Yang
  * Date: 11/1/17
  */
+#include "MemParser.h"
 
-int main(int argc, char *argv[])
-{
+using namespace std;
+
+int main(int argc, char *argv[]) {
   MemParser *parser;
 
   if(argc < 2){
@@ -25,7 +23,6 @@ int main(int argc, char *argv[])
   for (map<string, string>::iterator it = memoryMap.begin(); it!=memoryMap.end(); ++it) {
     cout << it->first << "\t"<< it->second << endl;
   }
-  
-  
+
   delete parser;
 }

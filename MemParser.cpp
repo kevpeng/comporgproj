@@ -2,8 +2,7 @@
 #include<iostream>
 
 // Default constructor, parse memory data into map data structure
-MemParser::MemParser(string filename)
-{
+MemParser::MemParser(string filename) {
 
   ifstream in;
   in.open(filename.c_str());
@@ -75,9 +74,8 @@ void MemParser::parseLine(string s){
   }
 }
 
-int MemParser::cvtNumString2Number(string s)
-  // Converts a string to an integer.  Assumes s is something like "-231" and produces -231
-{
+// Converts a string to an integer.  Assumes s is something like "-231" and produces -231
+int MemParser::cvtNumString2Number(string s) {
   int k = 1;
   int val = 0;
   for (int i = s.length()-1; i>0; i--)
@@ -104,7 +102,6 @@ string MemParser::formatHex(string s) {
   }
   transform(s.begin(), s.end(), s.begin(), ::toupper); //convert to all capital
   return s;
-
 }
 
 string MemParser::hex2Bin(string s) {

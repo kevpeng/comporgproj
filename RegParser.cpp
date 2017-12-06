@@ -12,7 +12,7 @@ RegParser::RegParser(string filename)
   }
   else{
     for(int i = 0; i < 32; i++){
-        myReg[i] = "00000000000000000000000000000000"; //initialize with zero values
+      myReg[i] = "00000000000000000000000000000000"; //initialize with zero values
     }
     string line;
     while(getline(in, line)){

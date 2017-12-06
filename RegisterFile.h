@@ -1,4 +1,4 @@
-/* Author: Are Oelsner
+/* 
  * RegisterFile.h
  * Reads in input registers and or immediate, outputs the relevant data to AL
  *
@@ -29,11 +29,12 @@ class RegisterFile {
 
     bool regWrite; //Input from Control that determines if a register is written
 
-	// helper methods to get hex string
-	char getHexCharacter(string str);
-	string bin2Hex(string s);
+    ///Private Helper Methods
+    // helper methods to get hex string
+    char getHexCharacter(string str);
+    string bin2Hex(string s);
 
-	
+
 
   public:
     ///Constructors
@@ -67,7 +68,6 @@ class RegisterFile {
     void printRegisterFile();
 
     map <int, string> getMap() { return registers; }
-
 };
 
 #endif

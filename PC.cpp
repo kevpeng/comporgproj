@@ -1,8 +1,6 @@
 /*
  * This class simulates the PC, program counter, of our datapath. 
  * It has a current address that gets updated. 
- *
- *
  */
 
 #include "PC.h" 

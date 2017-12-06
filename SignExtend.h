@@ -9,17 +9,17 @@
 #define _SIGNEXTEND_H_
 
 #include <string>
+
 using namespace std;
 
-class SignExtend
-{
-    
-private:
-    
-public:
+class SignExtend {
+
+  public:
+    ///Constructors
     // Default constructor
     SignExtend();
-    
+
+    ///Functions
     //extend a binary string into 32 bits supporting 2's complement representation
     string extend(string input);
 };

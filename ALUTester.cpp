@@ -1,16 +1,14 @@
-#include "ALU.h"
-
-using namespace std;
-
 /*
  * Tester file for ALU
  *
  * Author: Tianchang Yang
  * Date: 11/3/17
  */
+#include "ALU.h"
 
-int main(int argc, char *argv[])
-{
+using namespace std;
+
+int main(int argc, char *argv[]) {
   ALU temp = ALU();
 
   temp.setOperand1("11111111111111111111111111101111"); //-17
@@ -47,5 +45,4 @@ int main(int argc, char *argv[])
   output = temp.isEqual();
 
   cout << output << endl; //should output "false"
-
 }

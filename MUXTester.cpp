@@ -1,16 +1,14 @@
-#include "MUX.h"
-
-using namespace std;
-
 /*
  * Tester file for MUX
  *
  * Author: Tianchang Yang
  * Date: 11/3/17
  */
+#include "MUX.h"
 
-int main(int argc, char *argv[])
-{
+using namespace std;
+
+int main(int argc, char *argv[]) {
   MUX temp = MUX();
 
   temp.setOperand1("11111111111111111111111111101111"); //-17
@@ -38,5 +36,4 @@ int main(int argc, char *argv[])
   output = temp.getOutput();
 
   cout << output << endl; //should output "00000000000000000000000000011000"
-
 }

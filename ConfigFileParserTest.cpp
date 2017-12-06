@@ -1,7 +1,8 @@
+/* ConfigFileParser Tester
+ */
 #include "ConfigFileParser.h"
 
-int main()
-{
+int main() {
 	ConfigFileParser temp = ConfigFileParser();
 	temp.configure("input1.config");
 	cout << "input file name (.asm) = " << temp.getInputFile() << endl;
@@ -13,5 +14,4 @@ int main()
 	cout << "write to file? (1 = true, 0 = false) = " << temp.getWriteToFile() << endl;
 	cout << "print memory? (1 = true, 0 = false) = " << temp.getPrintMemory() << endl;
 	return 0;
-
 }

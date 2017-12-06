@@ -6,12 +6,16 @@ using namespace std;
 class ConfigFileParser
 {
 	public: 
-		
+    ///Constructors
 		// constructor for configurateion file parser
 		inline ConfigFileParser() { programInput = ""; memoryContentsInput = ""; 
 			registerFileInput = ""; outputFile = ""; batch = false; 
 			debug = false; writeToFile = false; printMemoryInput = false; } 
+
+    ///Functions
 		void configure(string file);	
+
+    ///Getters
 		inline string getInputFile() { return programInput; }
 		inline string getMemoryFile() { return memoryContentsInput; }
 		inline string getRegisterFile() { return registerFileInput; } 
@@ -22,7 +26,7 @@ class ConfigFileParser
 		inline bool getPrintMemory() { return printMemoryInput; } // if true, prints out current contents of entire register file and entire memory
  
 	private:
-		// private instance variables	
+    ///Private Variables
 		string programInput;
 		string  memoryContentsInput;
 		string registerFileInput;

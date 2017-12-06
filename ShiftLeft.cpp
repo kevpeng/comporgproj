@@ -7,15 +7,12 @@
 
 #include "ShiftLeft.h"
 
-ShiftLeft::ShiftLeft()
-{
-
+ShiftLeft::ShiftLeft() {
 }
 
 //takes in a 26-bit string that represents a binary number.
 //The method shifts the binary number left by 2 and adds 2 additional bits. 
-string ShiftLeft::shift(string input)
-{
+string ShiftLeft::shift(string input) {
 	if(input.length() == 32){
         input.erase(0,2);
     }

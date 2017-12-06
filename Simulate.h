@@ -10,6 +10,7 @@
 
 #include <fstream>
 #include <iostream>
+
 #include "ConfigFileParser.h"
 #include "InstructionMemory.h"
 #include "DataMemory.h"

@@ -54,7 +54,6 @@ void ALU::add() {
 string ALU::add(string operand1, string operand2) {
 	//cout << "operand1\t" << operand1 << "\tlength:\t"<< operand1.length () << endl;
 	//cout << "operand2\t" << operand2 << "\tlength:\t"<< operand2.length () << endl;
-	//cout << "yep" << endl;
 	char carry = '0'; //carry bit
 	string result = "00000000000000000000000000000000";
 	for (int i = 31; i > -1; i--) {

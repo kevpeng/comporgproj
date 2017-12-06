@@ -2,6 +2,7 @@
  */
 #include "Control.h"
 
+// Default Constructor
 Control::Control() {
   myRegDst = -1;
   myJump = -1;
@@ -14,6 +15,7 @@ Control::Control() {
   myRegWrite = false;
 }
 
+// Parses input instruction to set private variables
 void Control::setOpcode(string inst) {
   myOpcode = inst;
 
@@ -79,6 +81,4 @@ void Control::setOpcode(string inst) {
     myALUSrc = 0;
     myRegWrite = false;
   }
-
 }
-

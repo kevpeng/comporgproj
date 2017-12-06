@@ -34,8 +34,10 @@ class Control {
     //~Control();
 
     
+    ///Setters
     void setOpcode(string inst);
 
+    ///Getters
     int getRegDst() { return myRegDst; }
     int getJump() { return myJump; }
     bool getBranch() { return myBranch; }

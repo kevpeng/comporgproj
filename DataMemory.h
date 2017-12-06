@@ -10,6 +10,8 @@
 #include <fstream>
 #include <iterator> 
 
+#include "MemParser.h"
+
 using namespace std;
 
 class DataMemory
