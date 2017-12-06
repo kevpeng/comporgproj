@@ -27,7 +27,7 @@ RegParser::RegParser(string filename)
 bool RegParser::isEmpty(string s) {
   bool result = true;
   char c;
-  for(int i = 0; i < s.length(); i++) {
+  for(unsigned int i = 0; i < s.length(); i++) {
     c = s[i]; 
     if (!isspace(c)) {
       result = false;
@@ -40,7 +40,7 @@ bool RegParser::isEmpty(string s) {
 // (ignnoring whitespaces, starts with a "#")
 bool RegParser::isComment(string s) {
   char c;
-  for(int i = 0; i < s.length(); i++) {
+  for(unsigned int i = 0; i < s.length(); i++) {
     c = s[i]; 
     if (!isspace(c)) {
       if (c == '#') {
@@ -56,7 +56,7 @@ bool RegParser::isComment(string s) {
 // Given the line is neither empty nor a comment, and it is 
 // correctly formatted, parse the line into registers and its BINARY values.
 void RegParser::parseLine(string s){
-  int index = s.find(':');
+  unsigned int index = s.find(':');
   if (index != string::npos){ // found a ':'
     string str0 = s.substr(0, index); // register number
     string str1 = s.substr(index + 1, s.length()); //value
@@ -112,7 +112,7 @@ string RegParser::formatHex(string s) {
 
 string RegParser::hex2Bin(string s) {
   string result;
-  for (int i = 0; i < s.length(); i++) {
+  for (unsigned int i = 0; i < s.length(); i++) {
     char c = s[i];
     if (c == '0')  result += "0000";
     if (c == '1')  result += "0001";

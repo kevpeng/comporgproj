@@ -17,6 +17,7 @@ InstructionMemory::InstructionMemory() {
 InstructionMemory::InstructionMemory(string filename) {
 	InstructionParser parser = InstructionParser(filename);
 	myInstruction = parser.getInstruction();
+	myOriginal = parser.getOriginal();
 }
 
 void InstructionMemory::readAddress(string address){
@@ -26,6 +27,10 @@ void InstructionMemory::readAddress(string address){
 
 string InstructionMemory::getInstruction(){
 	return myInstruction[myAddress];
+}
+
+string InstructionMemory::getOriginal(){
+	return myOriginal[myAddress];
 }
 
 void InstructionMemory::print() 
@@ -63,7 +68,7 @@ char InstructionMemory::getHexCharacter(string str)
 string InstructionMemory::bin2Hex(string s)
 {
 	string endresult = "";
-	for(int i = 0; i < s.length(); i = i+4)
+	for(unsigned int i = 0; i < s.length(); i = i+4)
 	{
 		endresult += getHexCharacter(s.substr(i,4));
 	}

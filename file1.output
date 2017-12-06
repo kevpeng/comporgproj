@@ -1,0 +1,247 @@
+------------------begining simulation------------------
+Press Enter to Continue
+Next instruction is: beq	$2, $2, 0x200
+binary machine code: 00010000010000100000001000000000
+
+Printing Registers
+Register[0] = 	 0x58EED051
+Register[1] = 	 0x305F7EA1
+Register[2] = 	 0x2EC4F219
+Register[3] = 	 0xC57B54BA
+Register[4] = 	 0xE65E1E87
+Register[5] = 	 0x1DF23A4F
+Register[6] = 	 0xB90037D6
+Register[7] = 	 0x63322818
+Register[8] = 	 0x10916273
+Register[9] = 	 0x9DE6153F
+Register[10] = 	 0x81FB7B82
+Register[11] = 	 0xCE7D0A9B
+Register[12] = 	 0x9CB2A11C
+Register[13] = 	 0x0DDC6522
+Register[14] = 	 0x604CA9A9
+Register[15] = 	 0x488A6409
+Register[16] = 	 0xAAA29086
+Register[17] = 	 0x95DDCF94
+Register[18] = 	 0x61D998EF
+Register[19] = 	 0x8E9A6C56
+Register[20] = 	 0x5A3E780F
+Register[21] = 	 0xDAA25DB0
+Register[22] = 	 0x0A031E83
+Register[23] = 	 0x750773F2
+Register[24] = 	 0x67745CE5
+Register[25] = 	 0x9B0EAE9D
+Register[26] = 	 0x1EA9D4CC
+Register[27] = 	 0x854A7C53
+Register[28] = 	 0x70E0B33A
+Register[29] = 	 0x1B128E28
+Register[30] = 	 0xEA150CC4
+Register[31] = 	 0x81E72593
+
+Memory Contents:
+address:[0x10000000] = 0x58EED051
+address:[0x10000004] = 0x305F7EA1
+address:[0x10000008] = 0x2EC4F219
+address:[0x1000000C] = 0xC57B54BA
+address:[0x10000010] = 0xE65E1E87
+address:[0x10000014] = 0x1DF23A4F
+address:[0x10000018] = 0xB90037D6
+address:[0x1000001C] = 0x63322818
+address:[0x10000020] = 0x10916273
+address:[0x10000024] = 0x9DE6153F
+address:[0x10000028] = 0x81FB7B82
+address:[0x1000002C] = 0xCE7D0A9B
+address:[0x10000030] = 0x9CB2A11C
+address:[0x10000034] = 0x0DDC6522
+address:[0x10000038] = 0x604CA9A9
+address:[0x1000003C] = 0x488A6409
+address:[0x10000040] = 0xAAA29086
+address:[0x10000044] = 0x95DDCF94
+address:[0x10000048] = 0x61D998EF
+address:[0x1000004C] = 0x8E9A6C56
+address:[0x10000050] = 0x5A3E780F
+address:[0x10000054] = 0xDAA25DB0
+address:[0x10000058] = 0x0A031E83
+address:[0x1000005C] = 0x750773F2
+address:[0x10000060] = 0x67745CE5
+address:[0x10000064] = 0x01BBB31D
+address:[0x10000068] = 0xD318C95A
+address:[0x1000006C] = 0xC3D19C71
+address:[0x10000070] = 0x8C95E985
+
+Instruction Memory Contents:
+address:[0x00400000] = 0x10420200
+
+PC: 
+current PC address: 0x00400000
+
+Instruction memory: current instruction memory address: 0x00400000
+current instruction fetched from instruction memory: 0x10420200
+
+ALU 1: 
+address PC passed into ALU 1 is: 0x00400000
+the other operand ALU 1 takes in is: 0x00000004
+the result of ALU 1 is: 0x00400004
+
+Control: 
+The opcode passed to control is: 0x04
+RegDst: 0
+Jump: 0
+Branch: 1
+MemRead: 0
+MemToReg: 0
+ALUOp: 0
+MemWrite: 0
+ALUSrc: 0
+RegWrite: 0
+
+MUX 1: 
+The first operand passed in: 0x02
+The second operand passed in: 0x00
+The control passed to MUX 1 from main control is: 0
+The output from MUX 1 is: 0x02
+
+Register File: 
+The first read register number is: 0x02
+The second read register number is: 0x02
+The data read from first register is: 0x2EC4F219
+The data read from second register is: 0x2EC4F219
+
+Sign Extend: 
+The input is: 0x0200
+The output is: 0x00000200
+
+MUX 2: 
+The first operand passed in: 0x2EC4F219
+The second operand passed in: 0x00000200
+The control passed to MUX 2 from main control is: 0
+The output from MUX 2 is: 0x2EC4F219
+
+ALU Control: 
+The instruction received is: 0x00
+The ALUOp received from main control is: 0
+The control sending to ALU 3 is: 0
+
+ALU 3:
+Operand 1 is: 0x2EC4F219
+Operand 2 is: 0x2EC4F219
+Operation for ALU 3 to perform is: 0
+the result of ALU 3 is: 0x00000000
+The two operand is equal or not: 1
+
+Data Memory: 
+Address is set to: 0x00000000
+Data to write is: 0x2EC4F219
+MemWrite signal received from main control is: 0
+MemRead signal received from main control is: 0
+The data read from data memory is: 0x
+
+MUX 3: 
+The first operand passed in: 0x00000000
+The second operand passed in: 0x
+The control passed to MUX 3 from main control is: 0
+The output from MUX 3 is: 0x00000000
+
+Writeback: 
+The RegWrite signal is: 0
+The data to write to register is: 0x00000000
+The register to write to is: 0x02
+
+Shift left 1: 
+The instruction passed in is: 0x0420200
+Shift result is: 0x1080800
+The jump address is: 0x01080800
+
+Shift left 2: 
+The instruction passed in is: 0x00000200
+Shift result is: 0x00000800
+
+ALU 2:
+Operand 1 is: 0x00400004
+Operand 2 is: 0x00000800
+the result of ALU 2 is: 0x00400804
+
+MUX 5: 
+The first operand passed in: 0x00400004
+The second operand passed in: 0x00400804
+The control passed to MUX 5 from main control is: 1
+The output from MUX 5 is: 0x00400804
+
+MUX 4: 
+The first operand passed in: 0x00400804
+The second operand passed in: 0x01080800
+The control passed to MUX 4 from main control is: 0
+The output from MUX 4 is: 0x00400804
+
+
+
+------------------end------------------
+PC: 0x00400804
+Printing Registers
+Register[0] = 	 0x58EED051
+Register[1] = 	 0x305F7EA1
+Register[2] = 	 0x2EC4F219
+Register[3] = 	 0xC57B54BA
+Register[4] = 	 0xE65E1E87
+Register[5] = 	 0x1DF23A4F
+Register[6] = 	 0xB90037D6
+Register[7] = 	 0x63322818
+Register[8] = 	 0x10916273
+Register[9] = 	 0x9DE6153F
+Register[10] = 	 0x81FB7B82
+Register[11] = 	 0xCE7D0A9B
+Register[12] = 	 0x9CB2A11C
+Register[13] = 	 0x0DDC6522
+Register[14] = 	 0x604CA9A9
+Register[15] = 	 0x488A6409
+Register[16] = 	 0xAAA29086
+Register[17] = 	 0x95DDCF94
+Register[18] = 	 0x61D998EF
+Register[19] = 	 0x8E9A6C56
+Register[20] = 	 0x5A3E780F
+Register[21] = 	 0xDAA25DB0
+Register[22] = 	 0x0A031E83
+Register[23] = 	 0x750773F2
+Register[24] = 	 0x67745CE5
+Register[25] = 	 0x9B0EAE9D
+Register[26] = 	 0x1EA9D4CC
+Register[27] = 	 0x854A7C53
+Register[28] = 	 0x70E0B33A
+Register[29] = 	 0x1B128E28
+Register[30] = 	 0xEA150CC4
+Register[31] = 	 0x81E72593
+
+Memory Contents:
+address:[0x10000000] = 0x58EED051
+address:[0x10000004] = 0x305F7EA1
+address:[0x10000008] = 0x2EC4F219
+address:[0x1000000C] = 0xC57B54BA
+address:[0x10000010] = 0xE65E1E87
+address:[0x10000014] = 0x1DF23A4F
+address:[0x10000018] = 0xB90037D6
+address:[0x1000001C] = 0x63322818
+address:[0x10000020] = 0x10916273
+address:[0x10000024] = 0x9DE6153F
+address:[0x10000028] = 0x81FB7B82
+address:[0x1000002C] = 0xCE7D0A9B
+address:[0x10000030] = 0x9CB2A11C
+address:[0x10000034] = 0x0DDC6522
+address:[0x10000038] = 0x604CA9A9
+address:[0x1000003C] = 0x488A6409
+address:[0x10000040] = 0xAAA29086
+address:[0x10000044] = 0x95DDCF94
+address:[0x10000048] = 0x61D998EF
+address:[0x1000004C] = 0x8E9A6C56
+address:[0x10000050] = 0x5A3E780F
+address:[0x10000054] = 0xDAA25DB0
+address:[0x10000058] = 0x0A031E83
+address:[0x1000005C] = 0x750773F2
+address:[0x10000060] = 0x67745CE5
+address:[0x10000064] = 0x01BBB31D
+address:[0x10000068] = 0xD318C95A
+address:[0x1000006C] = 0xC3D19C71
+address:[0x10000070] = 0x8C95E985
+
+Instruction Memory Contents:
+address:[0x00400000] = 0x10420200
+address:[0x00400804] = 0x
+

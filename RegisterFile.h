@@ -28,10 +28,12 @@ class RegisterFile {
     int writeRegister; // register number of register to be written
 
     bool regWrite; //Input from Control that determines if a register is written
-  
-      // helper methods to get hex string
-    char getHexCharacter(string str);
-    string bin2Hex(string s);
+
+	// helper methods to get hex string
+	char getHexCharacter(string str);
+	string bin2Hex(string s);
+
+	
 
   public:
     ///Constructors
@@ -55,12 +57,16 @@ class RegisterFile {
 
     // Write Register -- received from Mux  of rd or rt. Depends on Control
     // signal TODO
-    void writeToRegister(int rd) {writeRegister = rd;}
+    void writeToRegister(string rd) {writeRegister = stoi (rd,nullptr,2);}
     // Write Data -- writes to the register specified by writeToRegister
     void writeData(string value);
 
+    void setWriteSignal(bool signal) { regWrite = signal; }
+
     // Function that outputs contents of Registers
     void printRegisterFile();
+
+    map <int, string> getMap() { return registers; }
 
 };
 

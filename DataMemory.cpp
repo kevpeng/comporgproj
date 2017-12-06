@@ -73,78 +73,19 @@ void DataMemory::setFromFile(string filename)
 */
 }
 
-// sets the needToWrite instance variable
-void DataMemory::setNeedToWrite(bool writeToMem) 
-{
-  needToWrite = writeToMem;
+void DataMemory::execute() {
+	if (needToWrite) {
+		dataMemoryMap[currentAddress] = currentData;
+	}
 }
 
-// if it's necessary to write data, write the data into the address given
-void DataMemory::writeData(string address) 
-{
-  if(needToWrite){
-    dataMemoryMap[address] = currentData;
-  }
+string DataMemory::readData() {
+	if (needToRead) {
+		return dataMemoryMap[currentAddress];
+	} else {
+		return "";
+	}
 }
-
-
-// determines if it's necessary and sets the needToRead instance variable
-void DataMemory::setNeedToRead(bool readFromMem)
-{
-  needToRead = readFromMem;
-}
-
-// given a hex string addres, sets it to the current address;
-void DataMemory::setCurrAddress(string address)
-{
-  currentAddress = address;
-  currentData = dataMemoryMap[currentAddress];
-}
-
-// given the data, sets current data to it.
-void DataMemory::setCurrData(string data)
-{
-  currentData = data;
-}
-
-// if it's necessary to read from memory, read it.
-string DataMemory::memRead()
-{
-  if(needToRead)
-  {
-    cout << "Memory Read: " << dataMemoryMap[currentAddress] << endl;
-    return dataMemoryMap[currentAddress];
-  } else {
-    cout << "Memory Read Disabled " << endl;
-    return "";
-  }
-}
-
-//If it's necessary to write to memory, write it.
-void DataMemory::memWrite()
-{
-  if(DataMemory::needToWrite){
-    cout << "Memory written: " << currentData << " At Address " << currentAddress << endl;
-    dataMemoryMap[currentAddress] = currentData;
-  }	
-
-}
-
-string DataMemory::readData()
-{
-  return currentData;
-}
-/*
-   string DataMemory::getAllData()
-   {
-   stringstream ss;
-   map<string,string>::iterator it;
-   for(it = dataMemoryMap.begin(); it != dataMemoryMap.end(); it++) {
-   ss << "dataMemoryMap[" << it->first << "] = " << it->second << endl; 
-   }
-   return ss.str();
-   }
-*/
 
 void DataMemory::print() 
 {
@@ -160,6 +101,8 @@ void DataMemory::print()
   //cout << "current data: " << currentData << endl;
 
 }
+
+
 
 char DataMemory::getHexCharacter(string str)
 {
@@ -185,7 +128,7 @@ char DataMemory::getHexCharacter(string str)
 string DataMemory::bin2Hex(string s)
 {
 	string endresult = "";
-	for(int i = 0; i < s.length(); i = i+4)
+	for(unsigned int i = 0; i < s.length(); i = i+4)
 	{
 		endresult += getHexCharacter(s.substr(i,4));
 	}

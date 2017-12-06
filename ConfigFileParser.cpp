@@ -1,6 +1,6 @@
 #include "ConfigFileParser.h"
 
-ConfigFileParser::ConfigFileParser() {}
+//ConfigFileParser::ConfigFileParser() {}
 
 void ConfigFileParser::configure(string file)
 {

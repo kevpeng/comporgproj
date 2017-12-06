@@ -6,6 +6,7 @@
 #include <fstream>
 #include <string>
 #include <bitset>
+#include <algorithm>
 
 using namespace std;
 
@@ -25,6 +26,8 @@ class InstructionParser{
 private:
     //data structure to store binary encoding with its respective address
     map<string, string> myInstruction;
+
+    map<string, string> myOriginal;
 
     //current address (starts with 0x00400000)
     string myAddress;
@@ -70,5 +73,7 @@ public:
 
    //returens the map storing binary encoding
    map<string, string> getInstruction() { return myInstruction; }
+
+   map<string, string> getOriginal() { return myOriginal; }
 };
 #endif

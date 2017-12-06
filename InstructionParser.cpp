@@ -21,12 +21,13 @@ InstructionParser::InstructionParser(string file){
     	string line;
     	while(getline(in, line)) {
     		if (!isEmpty(line) && !isComment(line)) {
-    			int i = 0;
+    			unsigned int i = 0;
     			while (i < line.length() && isWhitespace(line.at(i))) {
     				i++;
     			}
     			line = line.substr(i, line.length()); //taking care of the leading whitespaces
     			//cout << line << endl;
+                myOriginal[myAddress] = line;
 
     			i = 0;
     			while (i < line.length() && !isWhitespace(line.at(i))) {
@@ -77,7 +78,7 @@ InstructionParser::InstructionParser(string file){
 
 void InstructionParser::isADD(string line){
 	//cout << "ADD" << endl;
-	int i = 0;
+	unsigned int i = 0;
 	while (i < line.length() && !isWhitespace(line.at(i))) {
     	i++;
     }
@@ -147,7 +148,7 @@ void InstructionParser::isADD(string line){
 void InstructionParser::isSUB(string line){
 	//cout << "SUB" << endl;
 	//cout << "ADD" << endl;
-	int i = 0;
+	unsigned int i = 0;
 	while (i < line.length() && !isWhitespace(line.at(i))) {
     	i++;
     }
@@ -216,7 +217,7 @@ void InstructionParser::isSUB(string line){
 
 void InstructionParser::isADDI(string line){
 	//cout << "ADDI" << endl;
-	int i = 0;
+	unsigned int i = 0;
 	while (i < line.length() && !isWhitespace(line.at(i))) {
     	i++;
     }
@@ -288,7 +289,7 @@ void InstructionParser::isADDI(string line){
 void InstructionParser::isSLT(string line){
 	//cout << "SLT" << endl;
 	//cout << "ADD" << endl;
-	int i = 0;
+	unsigned int i = 0;
 	while (i < line.length() && !isWhitespace(line.at(i))) {
     	i++;
     }
@@ -358,7 +359,7 @@ void InstructionParser::isSLT(string line){
 void InstructionParser::isLW(string line){
 	//cout << "LW" << endl;
 
-	int i = 0;
+	unsigned int i = 0;
 	while (i < line.length() && !isWhitespace(line.at(i))) {
     	i++;
     }
@@ -424,7 +425,7 @@ void InstructionParser::isLW(string line){
 
 void InstructionParser::isSW(string line){
 	//cout << "SW" << endl;
-	int i = 0;
+	unsigned int i = 0;
 	while (i < line.length() && !isWhitespace(line.at(i))) {
     	i++;
     }
@@ -482,7 +483,7 @@ void InstructionParser::isSW(string line){
 
 void InstructionParser::isBEQ(string line){
 	//cout << "BEQ" << endl;
-	int i = 0;
+	unsigned int i = 0;
 	while (i < line.length() && !isWhitespace(line.at(i))) {
     	i++;
     }
@@ -553,7 +554,7 @@ void InstructionParser::isBEQ(string line){
 
 void InstructionParser::isJ(string line){
 	//cout << "J" << endl;
-	int i = 0;
+	unsigned int i = 0;
 	while (i < line.length() && !isWhitespace(line.at(i))) {
     	i++;
     }
@@ -603,7 +604,7 @@ void InstructionParser::increment(){
 bool InstructionParser::isEmpty(string s) {
   bool result = true;
   char c;
-  for(int i = 0; i < s.length(); i++) {
+  for(unsigned int i = 0; i < s.length(); i++) {
     c = s[i]; 
     if (!isspace(c)) {
       result = false;
@@ -616,7 +617,7 @@ bool InstructionParser::isEmpty(string s) {
 // (ignnoring whitespaces, starts with a "#")
 bool InstructionParser::isComment(string s) {
   char c;
-  for(int i = 0; i < s.length(); i++) {
+  for(unsigned int i = 0; i < s.length(); i++) {
     c = s[i]; 
     if (!isspace(c)) {
       if (c == '#') {
@@ -631,7 +632,7 @@ bool InstructionParser::isComment(string s) {
 
 string InstructionParser::hex2Bin(string s) {
   string result;
-  for (int i = 0; i < s.length(); i++) {
+  for (unsigned int i = 0; i < s.length(); i++) {
     char c = s[i];
     if (c == '0')  result += "0000";
     if (c == '1')  result += "0001";
@@ -678,7 +679,7 @@ char InstructionParser::getHexCharacter(string str)
 string InstructionParser::bin2Hex(string s)
 {
 	string endresult = "";
-	for(int i = 0; i < s.length(); i = i+4)
+	for(unsigned int i = 0; i < s.length(); i = i+4)
 	{
 		endresult += getHexCharacter(s.substr(i,4));
 	}

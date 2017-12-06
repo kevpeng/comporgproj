@@ -24,7 +24,7 @@ MemParser::MemParser(string filename)
 bool MemParser::isEmpty(string s) {
   bool result = true;
   char c;
-  for(int i = 0; i < s.length(); i++) {
+  for(unsigned int i = 0; i < s.length(); i++) {
     c = s[i]; 
     if (!isspace(c)) {
       result = false;
@@ -37,7 +37,7 @@ bool MemParser::isEmpty(string s) {
 // (ignnoring whitespaces, starts with a "#")
 bool MemParser::isComment(string s) {
   char c;
-  for(int i = 0; i < s.length(); i++) {
+  for(unsigned int i = 0; i < s.length(); i++) {
     c = s[i]; 
     if (!isspace(c)) {
       if (c == '#') {
@@ -53,7 +53,7 @@ bool MemParser::isComment(string s) {
 // Given the line is neither empty nor a comment, and it is 
 // correctly formatted, parse the line into memory map and its BINARY values.
 void MemParser::parseLine(string s){
-  int index = s.find(':');
+  unsigned int index = s.find(':');
   if (index != string::npos){ // found a ':'
     string str0 = s.substr(0, index); // memory address
     string str1 = s.substr(index + 1, s.length()); //value
@@ -109,7 +109,7 @@ string MemParser::formatHex(string s) {
 
 string MemParser::hex2Bin(string s) {
   string result;
-  for (int i = 0; i < s.length(); i++) {
+  for (unsigned int i = 0; i < s.length(); i++) {
     char c = s[i];
     if (c == '0')  result += "0000";
     if (c == '1')  result += "0001";

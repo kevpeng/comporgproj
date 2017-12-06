@@ -242,9 +242,6 @@ void Simulate::run(){
 			if (registerData1.substr(0,1) == "0" && MUX_2_output.substr(0,1) == "1") {
 				MUX_3_output = "00000000000000000000000000000000";
 			}
-			if (registerData1.substr(0,1) == "1" && MUX_2_output.substr(0,1) == "0") {
-				MUX_3_output = "00000000000000000000000000000001";
-			}
 		}
 
 		//writeback
@@ -327,7 +324,6 @@ void Simulate::run(){
 
 	cout << "------------------end------------------" << endl;
 	if (printMemory) {
-		cout << "PC: 0x" << curAddress << endl;
 		register_File.printRegisterFile();
 		cout << endl;
 		data_Memory.print();
@@ -622,9 +618,6 @@ void Simulate::runNWrite(){
 			if (registerData1.substr(0,1) == "0" && MUX_2_output.substr(0,1) == "1") {
 				MUX_3_output = "00000000000000000000000000000000";
 			}
-			if (registerData1.substr(0,1) == "1" && MUX_2_output.substr(0,1) == "0") {
-				MUX_3_output = "00000000000000000000000000000001";
-			}
 		}
 
 		//writeback
@@ -738,8 +731,6 @@ void Simulate::runNWrite(){
 	cout << "------------------end------------------" << endl;
 	writeFile << "------------------end------------------" << endl;
 	if (printMemory) {
-		cout << "PC: 0x" << curAddress << endl;
-		writeFile << "PC: 0x" << curAddress << endl;
 		register_File.printRegisterFile();
 		cout << endl;
 		data_Memory.print();

@@ -11,6 +11,5 @@
 int main(int argc, const char * argv[]) {
 
     Simulate sim = Simulate(argv[1]);
-    sim.run();
     return 0;
 }

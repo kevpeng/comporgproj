@@ -23,32 +23,13 @@ class DataMemory
 		// perform the appropriate function
 		void execute();
 
-
-		// sets from a file
 		void setFromFile(string filename);
-        
-		// writes data into a 32b string
-		void writeData(string address);
-	
-		// updates the address
-		void setCurrAddress(string address);
-	
-		// updates the data
-		void setCurrData(string data);
-       
-		//set the needToWrite variable
-		void setNeedToWrite(bool value);
 
-		// set the needToRead variable
-		void setNeedToRead(bool value);		
- 
-		// determines if needs to read memory and reads it
-		string memRead();
+		void setAddress(string address) { currentAddress = address; }
+		void setWriteData(string data) { currentData = data; }
+		void setMemWrite(bool memWrite) { needToWrite = memWrite; }
+		void setMemRead(bool memRead) { needToRead = memRead; }
 
-		// determines if needs to write to memory and writes it
-		void memWrite();
-		
-		// returns 32b string data
 		string readData();
 		
 		// returns all the values as a string stream
@@ -56,6 +37,10 @@ class DataMemory
 
 		// prints values in table out
 		void print();
+
+		map<string, string> getMap() { return dataMemoryMap; }
+
+		//void writeToFile(string filename);
 
 	private:
 		bool needToRead; // do we need to read the value

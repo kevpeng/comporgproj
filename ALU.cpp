@@ -16,6 +16,7 @@ using namespace std;
 //Default constructor
 ALU::ALU() {
 	myOperation = -1;
+	equals = false;
 }
 
 //performs appropriate function
@@ -24,9 +25,11 @@ void ALU::execute(){
 		compare();
 	}
 	if (myOperation == 1) {
+		compare();
 		add();
 	}
 	if (myOperation == 2) {
+		compare();
 		subtract();
 	}
 }
@@ -35,9 +38,11 @@ void ALU::compare() {
 	subtract(); //do subtract first
 	if (myOutput == "00000000000000000000000000000000") {
 		//the subtract result is zero
-		myOutput = "true";
+		myOutput = "00000000000000000000000000000000";
+		equals = true;
 	} else {
-		myOutput = "false";
+		myOutput = "00000000000000000000000000000000";
+		equals = false;
 	}
 }
 
@@ -130,6 +135,6 @@ string ALU::getOutput() {
 }
 
 //returns true if two operands are equal, false otherwise
-string ALU::isEqual(){
-	return myOutput;
+bool ALU::isEqual(){
+	return equals;
 }

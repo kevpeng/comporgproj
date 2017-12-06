@@ -24,18 +24,25 @@ public:
 
 	string getInstruction();
 
+	string getOriginal();
+
 	//print out contents
 	void print();
+
+	map<string, string> getMap() { return myInstruction; }
 
 private:
 	
 	string myAddress;
 
 	map<string, string> myInstruction;
+
+	map<string, string> myOriginal;
 	
 	// helper methods to print in hexidecimal
 	char getHexCharacter(string str);
-	string bin2hex(string s);
+	string bin2Hex(string s);
+	string add(string operand1, string operand2);
 	
 };
 
