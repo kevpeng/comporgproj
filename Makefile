@@ -1,4 +1,4 @@
-# Makefile Variables
+#Makefile Variables
 CC = g++     
 LD = $(CC)
 CCFLAGS = -Wall -Wno-deprecated --std=c++11 -g -c   
